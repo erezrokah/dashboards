@@ -1,6 +1,6 @@
 # Grafana Dashboards for CloudQuery
 
-[CloudQuery](https://github.com/cloudquery/cloudquery) is an open-source cloud asset management powered by SQL. Backed by PostgreSQL.
+[CloudQuery](https://github.com/cloudquery/cloudquery) is an open-source cloud asset inventory powered by SQL.
 
 You can connect your CloudQuery PostgreSQL database to Grafana to create a cloud asset inventory that you can visualization, monitoring and alert on.
 
@@ -8,15 +8,15 @@ Also, Checkout our blog about [Building an Open Source Cloud Asset Inventory wit
 
 ## What's inside?
 
-Currently we have basic asset inventory dashboards for AWS, GCP filterable by account_id,regions (project_id for GCP) (more is coming).
-
-**Naming Convention** - Dashboards file name correlate to CloudQuery resources.
+Currently we have basic asset inventory dashboards for AWS, GCP filterable by account_ids, regions and tables (project_id for GCP) (more is coming).
 
 ### AWS
 
 All AWS dashboards are coming with account_ids and regions filter.
 
 Located under [./dashboards/aws](./dashboards/aws)
+
+**Note**: aws_asset_inventory.json will require to execute the following [view](./views/aws_resources.sql) before importing the dashboard.
 
 ### GCP
 
@@ -26,16 +26,15 @@ Located under [./dashboards/gcp](./dashboards/gcp)
 
 ### Examples
 
-Here is an example of AWS RDS asset inventory Grafana dashboard:
+Here is an example of AWS asset inventory Grafana dashboard:
 
-![AWS RDS CloudQuery Grafana Dashboard](images/aws_rds_grafana_dashboard.png)
-
+![AWS Asset Inventory](./dashboards/aws/aws_asset_inventory.png)
 
 Here is an example of AWS EC2 Public and Private Instances Grafana dashboard:
 
-![AWS EC2 Public/Private Instances](images/aws_public_private_ec2_instances.png)
+![AWS EC2 Public/Private Instances](./dashboards/aws/aws_ec2_public_private.png)
 
 ## Contributions
 
-PRs are welcome with news dashboards, also feel free to ask for new dashboards via [GitHub Issues](https://github.com/cloudquery/grafana-dashboards)
+PRs are welcome with news dashboards, also feel free to ask for new dashboards via [GitHub Issues](https://github.com/cloudquery/grafana-dashboards) or hop on [discord](https://cloudquery.io/discord)
 
